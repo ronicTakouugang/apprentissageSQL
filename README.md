@@ -1,2 +1,2 @@
-# apprentissageSQL
-learningSQL
+# Diving onto the magical world of SQL
+
