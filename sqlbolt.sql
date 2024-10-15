@@ -107,12 +107,24 @@ ORDER BY rating DESC;
 -- 1
 SELECT DISTINCT building
 FROM employees; -- This was actually a trap😂
-
 -- 2
 SELECT * FROM Buildings;
-
 -- 3
 SELECT DISTINCT building_name, role 
 FROM buildings 
 LEFT JOIN employees
 ON building_name = building;
+
+-- LESSON8
+-- 1
+SELECT name,role 
+FROM employees
+WHERE employees.Building IS NULL;
+-- 2
+SELECT building_name,name 
+FROM buildings
+LEFT JOIN employees ON buildings.building_name = employees.building
+WHERE Name iS NULL;
+
+-- LESSON 8
+
