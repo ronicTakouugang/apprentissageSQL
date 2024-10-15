@@ -126,5 +126,18 @@ FROM buildings
 LEFT JOIN employees ON buildings.building_name = employees.building
 WHERE Name iS NULL;
 
--- LESSON 8
+-- LESSON 9
+-- 1
+SELECT m.title, (b.domestic_sales + b.international_sales) / 1000000 AS combined_sales_millions
+FROM movies m
+JOIN boxoffice b ON m.id = b.movie_id;
+-- 2
+SELECT m.title, b.rating * 10 AS rating_percent
+FROM movies m
+INNER JOIN boxoffice b ON m.id = b.movie_id	;
+-- 3
+SELECT *
+FROM movies
+WHERE year % 2 = 0;
+
 
