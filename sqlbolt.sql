@@ -1,6 +1,4 @@
--- Lesson 1
-
--- Exo1
+-- Lesson1
 -- 1
 SELECT title FROM movies
 -- 2
@@ -12,7 +10,7 @@ SELECT title,year FROM movies;
 -- 5
 SELECT * FROM movies;
 
--- Exo2
+-- Lesson2
 -- 1
 SELECT * FROM movies WHERE id="6";
 -- 2
@@ -21,29 +19,29 @@ WHERE Year NOT BETWEEN 2000 AND 2010;
 -- 3
 SELECT * FROM movies 
 WHERE Year BETWEEN 2000 AND 2010;
---4
+-- 4
 SELECT id,title,year FROM movies 
 WHERE id < 6
 
--- Exo3
---1
+-- Lesson3
+-- 1
 SELECT * FROM movies
 WHERE Title LIKE ("%Toy Story%")
---2
+-- 2
 SELECT * FROM movies
 WHERE Director LIKE ("John Lasseter")
---3
+-- 3
 SELECT * FROM movies
 WHERE Director NOT LIKE ("John Lasseter")
---4
+-- 4
 SELECT * FROM movies
 WHERE Title LIKE ("%WALL-%")
 
---Exo4
---1
+-- Lesson4
+-- 1
 SELECT DISTINCT director FROM movies
 ORDER BY director ASC
---2
+-- 2
 SELECT id,title,year
 FROM movies
 ORDER BY year DESC
@@ -53,7 +51,7 @@ SELECT id,title
 FROM movies
 ORDER BY Title ASC
 -- limit 5
---5
+-- 5 
 SELECT id,title
 FROM movies
 ORDER BY Title ASC
@@ -68,21 +66,39 @@ SELECT City,Country,Latitude
 FROM north_american_cities
 WHERE Country = "United States"
 ORDER BY Latitude DESC;
---3
+-- 3
 SELECT City,Longitude 
 FROM north_american_cities
 WHERE Longitude < -87.629798
 ORDER BY Longitude ASC;
---4
+-- 4
 SELECT City, Country, Population
 FROM north_american_cities
 WHERE country="Mexico"
 ORDER BY Population DESC
 -- LIMIT 2;
---5
+-- 5
 SELECT City, Country, Population
 FROM north_american_cities
 WHERE Country = "United States"
 ORDER BY Population DESC
 -- LIMIT 2 OFFSET 2;
 
+-- Lesson6
+-- 1
+SELECT title,domestic_sales, international_sales 
+FROM movies
+INNER JOIN boxoffice
+ON movies.id = boxoffice.movie_id;
+-- 2
+SELECT title,domestic_sales, international_sales 
+FROM movies
+INNER JOIN boxoffice
+ON movies.id = boxoffice.movie_id
+WHERE international_sales > domestic_sales;
+-- 3
+SELECT title,rating
+FROM movies
+INNER JOIN boxoffice
+ON movies.id = boxoffice.movie_id
+ORDER BY rating DESC;
