@@ -102,3 +102,17 @@ FROM movies
 INNER JOIN boxoffice
 ON movies.id = boxoffice.movie_id
 ORDER BY rating DESC;
+
+-- LESSON7
+-- 1
+SELECT DISTINCT building
+FROM employees; -- This was actually a trap😂
+
+-- 2
+SELECT * FROM Buildings;
+
+-- 3
+SELECT DISTINCT building_name, role 
+FROM buildings 
+LEFT JOIN employees
+ON building_name = building;
