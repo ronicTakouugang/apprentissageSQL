@@ -139,5 +139,19 @@ INNER JOIN boxoffice b ON m.id = b.movie_id	;
 SELECT *
 FROM movies
 WHERE year % 2 = 0;
+-- LESSON 10
+-- 1
+SELECT MAX(years_employed) AS longest_years_employed
+FROM employees; 
+-- 2
+SELECT role, AVG(years_employed) AS average_years_employed
+FROM employees
+GROUP BY role;
+-- 3
+SELECT building, SUM(years_employed) AS total_years_worked
+FROM employees
+GROUP BY building;
+-- LESSON 11
+-- 1
 
 
