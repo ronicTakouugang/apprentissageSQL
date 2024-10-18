@@ -179,3 +179,12 @@ FROM movies
         ON movies.id = boxoffice.movie_id
 GROUP BY director;
 
+-- LESSON 13
+-- 1
+INSERT INTO movies
+(Title,Director,Year,Length_minutes)
+VALUES ("Toy Story 4","Pete Docter","2024","100")
+-- 2
+INSERT INTO boxoffice
+(movie_id,rating,domestic_sales,international_sales)
+VALUES (15,8.7,340000000,270000000);
